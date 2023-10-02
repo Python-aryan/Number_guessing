@@ -6,6 +6,10 @@ lower = int(input("Enter Lower bound:- "))
 # Taking Inputs
 upper = int(input("Enter Upper bound:- "))
 
+if lower > upper:
+	print("Lower bound cannot be more than upper bound")
+	exit()
+
 # generating random number between
 # the lower and upper
 x = random.randint(lower, upper)
