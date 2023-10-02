@@ -11,7 +11,7 @@ upper = int(input("Enter Upper bound:- "))
 x = random.randint(lower, upper)
 print("\n\tYou've only ",
 	round(math.log(upper - lower + 1, 2)),
-	" chances to guess the integer!\n")
+	" chances to guess the integer number!\n")
 
 # Initializing the number of guesses.
 count = 0
