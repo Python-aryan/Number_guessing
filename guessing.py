@@ -18,6 +18,7 @@ count = 0
 
 # for calculation of minimum number of
 # guesses depends upon range
+while count < math.log(upper - lower + 1, 2):
 	count += 1
 
 	# taking guessing number as input
@@ -36,3 +37,6 @@ count = 0
 
 # If Guessing is more than required guesses,
 # shows this output.
+if count >= math.log(upper - lower + 1, 2):
+	print("\nThe number is %d" % x)
+	print("\tBetter Luck Next time!")
