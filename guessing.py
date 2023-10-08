@@ -1,5 +1,11 @@
 import random
 import math
+from art import logo_list
+
+
+print(random.choice(logo_list))
+print("Welcome to the Number Guessing Game!")
+
 # Taking Inputs
 lower = int(input("Enter Lower bound:- "))
 
