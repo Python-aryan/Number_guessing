@@ -1,10 +1,168 @@
-#Build a Number guessing game, in which the user selects a range.
 
-Let’s say User selected a range, i.e., from A to B, where A and B belong to Integer.
+# Number Guessing Game 🕹️
 
-Some random integer will be selected by the system and the user has to guess that integer in the minimum number of guesses.
+A simple and fun Python-based number guessing game. The system picks a random number in a user‑specified range, and the player must guess it in as few attempts as possible.
 
-User manual
+---
 
-If the User inputs range, let’s say from 1 to 100. And compiler randomly selected 42 as the integer. And now the guessing game started, so the user entered 50 as his/her first guess. The compiler shows “Try Again! You guessed too high”. That’s mean the random number (i.e., 42) doesn’t fall in the range from 50 to 100. That’s the importance of guessing half of the range. And again, the user guesses half of 50 (Could you tell me why?). So the half of 50 is 25. The user enters 25 as his/her second guess. This time compiler will show, “Try Again! You guessed too small”. That’s mean the integers less than 25 (from 1 to 25) are useless to be guessed. Now the range for user guessing is shorter, i.e., from 25 to 50. Intelligently! The user guessed half of this range, so that, user guessed 37 as his/her third guess.  This time again the compiler shows the output, “Try Again! You guessed too small”. For the user, the guessing range is getting smaller by each guess. Now, the guessing range for user is from 37 to 50, for which the user guessed 43 as his/her fourth guess. This time the compiler will show an output “Try Again! You guessed too high”. So, the new guessing range for users will be from 37 to 43, again for which the user guessed the half of this range, that is, 40 as his/her fifth guess.  This time the compiler shows the output, “Try Again! You guessed too small”. Leaving the guess even smaller such that from 41 to 43. And now the user guessed 41 as his/her sixth guess. Which is wrong and shows output “Try Again! You guessed too small”. And finally, the User Guessed the right number which is 42 as his/her seventh guess.
+## 📋 Table of Contents
+
+* [About](#about)
+* [Features](#features)
+* [How It Works](#how-it-works)
+* [Getting Started](#getting-started)
+
+  * [Prerequisites](#prerequisites)
+  * [Installation & Running](#installation--running)
+* [Usage Example](#usage-example)
+* [Possible Improvements / Extensions](#possible-improvements--extensions)
+* [Contributing](#contributing)
+* [License](#license)
+
+---
+
+## ℹ️ About
+
+**Number_guessing** is a command-line game where the user defines a numeric range (e.g. 1 to 100), and the program randomly selects a number within that range. The user then guesses repeatedly, and after each guess is told whether their guess is too high, too low, or correct—until they find the number.
+
+This is a good beginner project to practice:
+
+* Input / output
+* Control flow (loops, conditionals)
+* Error handling
+* Random number generation
+* Simple game logic
+
+---
+
+## ✅ Features
+
+* User specifies the lower and upper bounds of the range
+* Random number is generated in that range
+* After each guess, feedback is given: “Too high”, “Too low”, or “Correct”
+* Keeps track of number of attempts
+* Validates user input (e.g. non‑numbers, guesses outside range)
+* (Optional) A little ASCII art / fun touches if you include in `art.py`
+
+---
+
+## ⚙️ How It Works
+
+1. Ask the user for the lower bound `A` and upper bound `B`
+2. Generate a random number `target` in `[A, B]`
+3. Loop until user guesses `target`:
+
+   * Prompt user for a guess
+   * If guess < target → print “Too low”
+   * If guess > target → print “Too high”
+   * Else → print “Congratulations! You guessed it in N tries.”
+4. Optionally, offer to play again
+
+This game essentially practices **binary‑search style narrowing** of the range by feedback, though user does the logic manually.
+
+---
+
+## 🛠 Getting Started
+
+### Prerequisites
+
+* Python 3.x
+* Basic knowledge of running Python scripts from terminal / command line
+
+### Installation & Running
+
+1. Clone the repo:
+
+   ```bash
+   git clone https://github.com/Python-aryan/Number_guessing.git
+   cd Number_guessing
+   ```
+
+2. Optionally, use a virtual environment:
+
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate    # on macOS / Linux
+   # or `.\venv\Scripts\activate` on Windows
+   ```
+
+3. Run the game:
+
+   ```bash
+   python guessing.py
+   ```
+
+   (If there are other entry‑point scripts, you may also run `art.py` or combined driver script.)
+
+---
+
+## 🎮 Usage Example
+
+```
+Welcome to Number Guessing Game!
+Enter the lower bound: 1
+Enter the upper bound: 100
+
+I have picked a number between 1 and 100. Try to guess it!
+
+Your guess: 50  
+Too high.
+
+Your guess: 25  
+Too low.
+
+Your guess: 37  
+Too low.
+
+Your guess: 45  
+Too high.
+
+Your guess: 40  
+Correct! You guessed it in 5 tries.  
+```
+
+If the user inputs invalid data (non-integer, out of range, etc.), your program should catch that and prompt again.
+
+---
+
+## 🚀 Possible Improvements / Extensions
+
+Here are ideas you (or others) can build on:
+
+* **Replay / Loop** — After finishing, ask user if they want to play again.
+* **Difficulty Levels** — Fixed ranges (easy, medium, hard) with different limits.
+* **Hints** — Offer hints (“You’re within 10”, “Warm / Cold”)
+* **Leaderboard / High Score** — Save the minimum attempts across sessions.
+* **Graphical UI / Web UI** — Use Tkinter, PyQt, or a web interface.
+* **Multiplayer mode** — Two players alternate, or guesser vs setter.
+* **Timing / Score** — Add a timer or scoring based on speed + guesses.
+* **Logging / History** — Store past games, statistics.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! You can help by:
+
+1. Forking the repo
+2. Creating a branch for your feature (e.g. `feature/hints`)
+3. Making your changes / adding tests / updating README
+4. Submitting a pull request
+
+Be sure to describe what you changed or added, and test that everything works.
+
+---
+
+## 📄 License
+
+Add your project license here (e.g. MIT, Apache‑2.0). If you don’t have one yet, you may use:
+
+```
+MIT License
+
+Copyright (c) 2025 <Your Name>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+… (rest of MIT text) …
+```
 
