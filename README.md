@@ -1,10 +1,64 @@
-#Build a Number guessing game, in which the user selects a range.
+# Number Guessing Game
 
-Let’s say User selected a range, i.e., from A to B, where A and B belong to Integer.
+A simple terminal game where you set a range and try to guess the secret number in as few attempts as possible.
 
-Some random integer will be selected by the system and the user has to guess that integer in the minimum number of guesses.
+### Features
+- **Custom range**: choose any integer lower and upper bounds.
+- **Smart attempt limit**: you get about log2(range) attempts (rounded up).
+- **Input validation**: friendly prompts for invalid or out‑of‑range inputs.
+- **Fun ASCII banners**: randomized game logo from `art.py`.
 
-User manual
+## Requirements
+- Python 3.7+
 
-If the User inputs range, let’s say from 1 to 100. And compiler randomly selected 42 as the integer. And now the guessing game started, so the user entered 50 as his/her first guess. The compiler shows “Try Again! You guessed too high”. That’s mean the random number (i.e., 42) doesn’t fall in the range from 50 to 100. That’s the importance of guessing half of the range. And again, the user guesses half of 50 (Could you tell me why?). So the half of 50 is 25. The user enters 25 as his/her second guess. This time compiler will show, “Try Again! You guessed too small”. That’s mean the integers less than 25 (from 1 to 25) are useless to be guessed. Now the range for user guessing is shorter, i.e., from 25 to 50. Intelligently! The user guessed half of this range, so that, user guessed 37 as his/her third guess.  This time again the compiler shows the output, “Try Again! You guessed too small”. For the user, the guessing range is getting smaller by each guess. Now, the guessing range for user is from 37 to 50, for which the user guessed 43 as his/her fourth guess. This time the compiler will show an output “Try Again! You guessed too high”. So, the new guessing range for users will be from 37 to 43, again for which the user guessed the half of this range, that is, 40 as his/her fifth guess.  This time the compiler shows the output, “Try Again! You guessed too small”. Leaving the guess even smaller such that from 41 to 43. And now the user guessed 41 as his/her sixth guess. Which is wrong and shows output “Try Again! You guessed too small”. And finally, the User Guessed the right number which is 42 as his/her seventh guess.
+## Run
+From the `Number_guessing` directory:
 
+```bash
+python guessing.py
+```
+
+## How to Play
+1. Enter a lower and upper bound (integers). If you enter the same number for both, the range contains a single value.
+2. The game picks a secret number within your range.
+3. You have a limited number of attempts to guess it. After each guess you’ll see whether it’s too high or too small, plus how many attempts remain.
+4. Guess correctly within the limit to win; otherwise the game reveals the number.
+
+### Attempt Limit
+The number of chances is calculated as: ceil(log2(upper − lower + 1)). This mirrors an optimal binary‑search strategy.
+
+## Example Session
+```text
+████ Game banner (randomized) ████
+Welcome to the Number Guessing Game!
+Enter Lower bound:- 1
+Enter Upper bound:- 100
+
+    You've only 7 chances to guess the integer number!
+
+Guess a number: 50
+You guessed too high!
+Attempts remaining: 6
+
+Guess a number: 25
+You guessed too small!
+Attempts remaining: 5
+
+... (more guesses) ...
+
+Congratulations you guessed it in 4 tries
+```
+
+## Tips
+- Start by guessing near the middle of the current range to narrow it quickly.
+- Pay attention to the remaining attempts displayed after each guess.
+
+## Files
+- `guessing.py`: main game logic.
+- `art.py`: list of ASCII art banners used at startup.
+
+## Contributing
+Pull requests to improve the game (UX, features, or code quality) are welcome. Please keep the game simple and beginner‑friendly.
+
+## License
+MIT
