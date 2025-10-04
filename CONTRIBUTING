@@ -1,0 +1,94 @@
+Contributing to DevUI
+Thank you for your interest in contributing to Number_guessing! 🎉 We welcome contributions of all types, from bug fixes and new components to design improvements and documentation.
+
+This guide will help you get started quickly.
+
+
+Table of Contents
+How to Contribute
+Setting Up the Project
+Code Guidelines
+Submitting a Pull Request
+Issues & Feature Requests
+Code of Conduct
+
+
+How to Contribute
+You can contribute by:
+
+Adding new shadcn/ui components
+Improving existing components
+Fixing bugs
+Enhancing UI/UX design, animations, or responsiveness
+Improving documentation or code examples
+
+Every contribution counts and is greatly appreciated! 🙌
+
+
+Setting Up the Project
+Fork the repository
+Clone your fork locally:
+
+git clone https://github.com/YOUR_USERNAME/Number_guessing.git
+
+cd Number_guessing
+
+Install dependencies:
+
+pip install requirements.txt
+
+Start building or editing components
+
+
+Code Guidelines
+Use modern React + shadcn/ui patterns
+Keep code clean, readable, and well-formatted
+Write descriptive variable and function names
+Ensure components are fully responsive
+Use consistent styling and dark theme gradients
+Add comments where necessary
+
+
+Submitting a Pull Request
+Create a new branch for your changes:
+
+git checkout -b feature/your-feature-name
+
+Make your changes and commit:
+
+git commit -m "Add descriptive commit message"
+
+Push your branch to your fork:
+
+git push origin feature/your-feature-name
+
+Open a Pull Request against the main repository. Include:
+
+Description of your changes
+Screenshot or GIF (if UI changes)
+Issue number (if applicable)
+
+Your PR will be reviewed, and feedback may be provided.
+
+
+Issues & Feature Requests
+Check existing issues before creating a new one
+Use clear, descriptive titles and explanations
+Tag issues as hacktoberfest if you want them to count for Hacktoberfest contributions
+
+
+Code of Conduct
+Please read our Code of Conduct before contributing. We want DevUI Components to be a welcoming and inclusive community.
+
+
+Hacktoberfest 2025
+This project is Hacktoberfest-friendly!
+
+Look for issues labeled hacktoberfest
+PRs fixing bugs or adding new components count toward your Hacktoberfest contributions
+Make sure your PRs are high-quality, well-tested, and documented
+
+
+Thank You! 💜
+Your contributions help make DevUI Components better for everyone. Together, we can build a stunning, open-source component library for the community! 🚀
+
